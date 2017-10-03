@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Practica5</string>
+
+    <string-array name="Bebidas">
+        <item>Café</item>
+        <item>Gaseosa</item>
+        <item>Agua</item>
+        <item>Té</item>
+    </string-array>
+
+</resources>
