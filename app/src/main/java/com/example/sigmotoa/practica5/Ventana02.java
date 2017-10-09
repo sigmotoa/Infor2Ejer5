@@ -40,7 +40,11 @@ public class Ventana02 extends AppCompatActivity {
         {
             log("sin cebolla");
         }
+
+        log("Cantidad: "+String.valueOf(pedidoham.getCantidad()));
+
         log("");
+
         log("Bebida");
         log(pedidobeb.getTipo());
 
@@ -53,7 +57,7 @@ public class Ventana02 extends AppCompatActivity {
             log("sin hielo");
         }
 
-
+        log("Cantidad: "+String.valueOf(pedidobeb.getCantidad()));
 
     }
     private void log(String s)

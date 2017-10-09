@@ -11,10 +11,13 @@ public class Bebida implements Parcelable {
 
     private String tipo;
     private boolean hielo;
+    private int cantidad;
 
-    public Bebida(String tipo, boolean hielo) {
+    public Bebida(String tipo, boolean hielo, int cantidad) {
         this.tipo = tipo;
         this.hielo = hielo;
+        this.cantidad=cantidad;
+
     }
 
     public static final Creator<Bebida> CREATOR = new Creator<Bebida>() {
@@ -37,6 +40,11 @@ public class Bebida implements Parcelable {
         return hielo;
     }
 
+    public int getCantidad()
+    {
+        return cantidad;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -46,26 +54,14 @@ public class Bebida implements Parcelable {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(tipo);
         parcel.writeInt(hielo?1:0);
+        parcel.writeInt(cantidad);
     }
 
     public Bebida(Parcel parcel) {
         tipo=parcel.readString();
         hielo=(parcel.readInt()==0)?false:true;
+        cantidad=parcel.readInt();
     }
 
-/*
-    public static final Parcelable.Creator<Bebida> CREATOR=new Parcelable.Creator<Bebida>()
-    {
-        @Override
-        public Bebida createFormParcel(Parcel parcel)
-        {
-            return new Bebida(parcel);
-        }
 
-        public Bebida[] newArray(int size)
-        {
-            return new Bebida[size];
-        }
-    };
-*/
 }

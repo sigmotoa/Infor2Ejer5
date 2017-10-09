@@ -71,6 +71,19 @@
                 android:layout_height="45dp" />
 
             <TextView
+                android:id="@+id/textViewcantidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cantidad" />
+
+            <SeekBar
+                android:id="@+id/seekBar1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="10"
+                android:min="1" />
+
+            <TextView
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -99,6 +112,19 @@
                 android:text="Hielo"
                 android:id="@+id/checkBox"
                 />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cantidad" />
+
+            <SeekBar
+                android:id="@+id/seekBar2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="10"
+                android:min="0" />
 
             <TextView
                 android:layout_width="wrap_content"

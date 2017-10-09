@@ -10,11 +10,13 @@ public class Hamburguesa implements Serializable{
 
     private String tipo;
     private boolean cebolla;
+    private int cantidad;
 
-    public Hamburguesa(String tipo,boolean cebolla)
+    public Hamburguesa(String tipo,boolean cebolla, int cantidad)
     {
         this.tipo=tipo;
         this.cebolla=cebolla;
+        this.cantidad=cantidad;
 
     }
 
@@ -26,5 +28,7 @@ public class Hamburguesa implements Serializable{
     {
         return cebolla;
     }
-
+    public int getCantidad() {
+        return cantidad;
+    }
 }

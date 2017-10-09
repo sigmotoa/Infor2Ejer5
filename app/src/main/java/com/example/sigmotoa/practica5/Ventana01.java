@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -25,6 +26,8 @@ public class Ventana01 extends AppCompatActivity {
     private Spinner lista03;//bebida
     private CheckBox hielo;//con hielo
     private Button enviar;
+    private SeekBar canth;
+    private SeekBar cantb;
 
     List<String> tipoh;
     List<String> sino;
@@ -40,6 +43,9 @@ public class Ventana01 extends AppCompatActivity {
         lista03=(Spinner)findViewById(R.id.spinner3);
         hielo=(CheckBox)findViewById(R.id.checkBox);
         enviar=(Button)findViewById(R.id.button);
+        canth=(SeekBar)findViewById(R.id.seekBar1);
+        cantb=(SeekBar)findViewById(R.id.seekBar2);
+
         datosInicio();
 
 
@@ -73,17 +79,23 @@ public class Ventana01 extends AppCompatActivity {
         lista02.setAdapter(adaptador2);
         cliente =(EditText)findViewById(R.id.editText);
 
+
+
+
     }
 
 public void llamaractividad(View v)
 {
 
+    int cantha=canth.getProgress();
+    int cantbe=cantb.getProgress();
+
     boolean tomate=false;
     if (lista02.getSelectedItem().toString().equals("SI"))tomate=true;
-    Hamburguesa miham = new Hamburguesa(lista01.getSelectedItem().toString(),tomate);
+    Hamburguesa miham = new Hamburguesa(lista01.getSelectedItem().toString(),tomate,cantha);
 
     boolean hielo=this.hielo.isChecked();
-    Bebida mibeb=new Bebida(lista03.getSelectedItem().toString(),hielo);
+    Bebida mibeb=new Bebida(lista03.getSelectedItem().toString(),hielo,cantbe);
 
     Intent int01=new Intent(this, Ventana02.class);
 
@@ -96,6 +108,7 @@ else
         int01.putExtra("CLIENTE", cliente.getText().toString());
         int01.putExtra("HAMBURGUESA", miham);
         int01.putExtra("BEBIDA", mibeb);
+
 
         startActivity(int01);
     }
